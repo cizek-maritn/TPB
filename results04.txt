@@ -1,0 +1,148 @@
+1.
+ITE00100554     32.30C
+EZE00100082     32.30C
+
+2.
+to 1823
+you 1508
+your 1418
+the 1287
+a 1188
+of 964
+and 928
+that 678
+in 613
+is 560
+for 535
+it 459
+on 425
+are 424
+if 411
+business 374
+be 369
+can 349
+as 343
+i 326
+BONUS
+online 144
+zdarma 131
+premium 112
+televize 98
+tellyna 92
+ušetříte 92
+přístup 81
+prémiových 70
+články 68
+vyzkoušet 61
+dalších 61
+následně 60
+jejich 57
+protože 57
+předplatit 54
+domácí 48
+například 44
+nakonec 43
+letech 42
+oproti 42
+
+3.
+id: 68 total price: 6375.450000000001
+id: 73 total price: 6206.200000000001
+id: 39 total price: 6193.110000000001
+id: 54 total price: 6065.390000000001
+id: 71 total price: 5995.660000000002
+id: 2 total price: 5994.59
+id: 97 total price: 5977.1900000000005
+id: 46 total price: 5963.109999999999
+id: 42 total price: 5696.840000000002
+id: 59 total price: 5642.889999999999
+id: 41 total price: 5637.620000000001
+id: 0 total price: 5524.949999999999
+id: 8 total price: 5517.24
+id: 85 total price: 5503.43
+id: 61 total price: 5497.4800000000005
+id: 32 total price: 5496.05
+id: 58 total price: 5437.73
+id: 63 total price: 5415.1500000000015
+id: 15 total price: 5413.51
+id: 6 total price: 5397.879999999999
+id: 92 total price: 5379.279999999999
+id: 43 total price: 5368.83
+id: 70 total price: 5368.249999999999
+id: 72 total price: 5337.439999999999
+id: 34 total price: 5330.8
+id: 9 total price: 5322.65
+id: 55 total price: 5298.089999999999
+id: 90 total price: 5290.41
+id: 64 total price: 5288.689999999999
+id: 93 total price: 5265.75
+id: 24 total price: 5259.92
+id: 33 total price: 5254.660000000002
+id: 62 total price: 5253.3200000000015
+id: 26 total price: 5250.4
+id: 52 total price: 5245.0599999999995
+id: 87 total price: 5206.4
+id: 40 total price: 5186.429999999999
+id: 35 total price: 5155.420000000001
+id: 11 total price: 5152.289999999999
+id: 65 total price: 5140.35
+id: 69 total price: 5123.01
+id: 81 total price: 5112.709999999999
+id: 19 total price: 5059.43
+id: 25 total price: 5057.610000000001
+id: 60 total price: 5040.709999999999
+id: 17 total price: 5032.68
+id: 29 total price: 5032.530000000001
+id: 22 total price: 5019.449999999999
+id: 28 total price: 5000.709999999999
+id: 30 total price: 4990.72
+id: 16 total price: 4979.06
+id: 51 total price: 4975.220000000001
+id: 1 total price: 4958.600000000001
+id: 53 total price: 4945.300000000001
+id: 18 total price: 4921.269999999999
+id: 27 total price: 4915.89
+id: 86 total price: 4908.810000000001
+id: 76 total price: 4904.210000000001
+id: 38 total price: 4898.460000000001
+id: 95 total price: 4876.839999999998
+id: 89 total price: 4851.48
+id: 20 total price: 4836.860000000001
+id: 88 total price: 4830.55
+id: 10 total price: 4819.7
+id: 4 total price: 4815.050000000001
+id: 82 total price: 4812.49
+id: 31 total price: 4765.049999999999
+id: 44 total price: 4756.890000000001
+id: 7 total price: 4755.069999999999
+id: 37 total price: 4735.200000000001
+id: 14 total price: 4735.030000000001
+id: 80 total price: 4727.86
+id: 21 total price: 4707.41
+id: 56 total price: 4701.02
+id: 66 total price: 4681.92
+id: 12 total price: 4664.589999999999
+id: 3 total price: 4659.63
+id: 84 total price: 4652.9400000000005
+id: 74 total price: 4647.130000000001
+id: 91 total price: 4642.26
+id: 83 total price: 4635.8
+id: 57 total price: 4628.4
+id: 5 total price: 4561.07
+id: 78 total price: 4524.51
+id: 50 total price: 4517.2699999999995
+id: 67 total price: 4505.79
+id: 94 total price: 4475.570000000001
+id: 49 total price: 4394.6
+id: 48 total price: 4384.33
+id: 13 total price: 4367.619999999999
+id: 77 total price: 4327.73
+id: 47 total price: 4316.299999999998
+id: 98 total price: 4297.259999999999
+id: 36 total price: 4278.049999999999
+id: 75 total price: 4178.5
+id: 99 total price: 4172.29
+id: 23 total price: 4042.65
+id: 96 total price: 3924.2300000000005
+id: 79 total price: 3790.5699999999997
+id: 45 total price: 3309.3799999999997

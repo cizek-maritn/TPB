@@ -1,0 +1,88 @@
+idnes> db.articles.aggregate([{ $sample: { size: 1 } }])
+[
+  {
+    _id: ObjectId("65492769ff26d66fb62eff8f"),
+    title: 'Jsem nasr... Trenér Barcelony po nejhorším výkonu sezony tvrdě kritizoval',
+    category: 'Fotbal',
+    timedate: '2023-02-27T12:59:00+01:00',
+    photos: '5',
+    comments: '2',
+    content: 'Sice neztratila první místo ve španělské fotbalové lize, ale při utkání s outsiderem vyloženě zklamala. A nejen svého trenéra. „Zvlášť v prvním poločase to byl náš nejhorší zápas v sezoně,“ neskrýval Xavi.Všechno se odehrálo pár dní poté, co Barcelona vypadla z Evropské ligy. Ve velkém pohárovém šlágru nestačila na Manchester United a je otázkou, jak se bude všechno odvíjet dál.\n' +
+      '\n' +
+      '\n' +
+      '\n' +
+      'Barcelona poprvé od října v lize prohrála. Nečekaně s Almeríou\n' +
+      '\n' +
+      '\n' +
+      ' \n' +
+      '\n' +
+      'Barcelona si na prvním místě tabulky drží sedmibodový náskok na Real Madrid. Dohromady ve třiadvaceti kolech inkasovala pouhých osm ligových gólů.Ten poslední zařídil ramenatý útočník El Bilal Touré. Pár poznámek k němu: jednadvacet let, rodák z Pobřeží slonoviny, vyrůstal v Mali (tuhle africkou zemi také reprezentuje), získala ho francouzská Remeš, loni v září ho koupila Almería, se kterou podepsal šestiletý kontrakt.Touré si v náběhu zpracoval mazanou přihrávku, napřáhl pravačkou a střelu vypálil pod břevno. Almería díky tomu porazila Barcelonu poprvé v historii španělské nejvyšší soutěže. Zároveň se z předposlední příčky dostala na patnáctou. Okamžitě má na dosah dvanáctý Espaňol. Zato Barcelona zpytuje svědomí. Jak řekl trenér Xavi: „Vůbec jsme se nedostali do zápasu a není pro to žádná omluva.“Přitom když se podíváte na statistiky, měla Barcelona vládnout. Třináct střel, 72procentní držení míče, 89procentní přesnost. Jenže jediná rána na bránu nemohla přinést radost, Almería byla v brejcích daleko nebezpečnější.Barcelona se musí rychle oklepat, protože v téhle pasáži sezony jde o hodně. Evropskou ligu si katalánský obr zkazil. Ve čtvrtek rozehraje semifinále Španělského poháru proti Realu Madrid a v neděli hraje ošidný ligový zápas s Valencií.'
+  }
+]
+
+######################
+
+idnes> db.articles.countDocuments()
+83627
+
+######################
+
+idnes> db.articles.updateMany( {},  [{$set: {convertedPhotos: {$convert: { input: "$photos", to: "int", onError: 0, onNull: Int32("0")}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 83627,
+  modifiedCount: 83627,
+  upsertedCount: 0
+}
+idnes> db.articles.aggregate([{ $group: { _id: null, avgPhotos: { $avg: "$convertedPhotos" } } }])
+[ { _id: null, avgPhotos: 10.741339519533165 } ]
+
+######################
+
+idnes> db.articles.updateMany( {},  [{$set: {convertedComments: {$convert: { input: "$comments", to: "int", onError: 0, onNull: Int32("0")}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 83627,
+  modifiedCount: 83627,
+  upsertedCount: 0
+}
+
+idnes> db.articles.aggregate([{$match: {convertedComments: {$gt: 100}}}, {$count: "count"}])
+[ { count: 8586 } ]
+
+######################
+
+idnes> db.articles.updateMany( {},  [{$set: {convertedDate: {$convert: { input: "$timedate", to: "date", onError: ISODate("1973-10-20T21:20:00Z"), onNull: ISODate("1973-10-20T21:20:00Z")}}}}])
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 83627,
+  modifiedCount: 83627,
+  upsertedCount: 0
+}
+
+idnes> db.articles.aggregate([{$match: {convertedDate:{ $gt: ISODate("2021-12-31T00:00:00.000Z"), $lt: ISODate("2023-01-01T00:00:00.000Z")}}}, {$group: {_id: "$category", count: {$sum: 1}}}])
+[
+  { _id: 'Žena a život', count: 21 },
+  { _id: 'Bydlení', count: 235 },
+  { _id: 'Magazín', count: 18 },
+  { _id: 'Horoskopy', count: 24 },
+  { _id: 'Technet', count: 366 },
+  { _id: 'Orientace', count: 7 },
+  { _id: 'Benefity', count: 289 },
+  { _id: 'Xman', count: 218 },
+  { _id: 'Speciály', count: 95 },
+  { _id: 'default', count: 511 },
+  { _id: 'Ekonomika', count: 1752 },
+  { _id: 'Kraje', count: 5799 },
+  { _id: 'Móda a krása', count: 87 },
+  { _id: 'Cyklistika', count: 278 },
+  { _id: 'Zahraničí', count: 3000 },
+  { _id: 'Cestování', count: 263 },
+  { _id: 'Výsledky MS', count: 1 },
+  { _id: 'Formule', count: 141 },
+  { _id: 'Knihy', count: 12 },
+  { _id: 'Sport', count: 10 }
+]
