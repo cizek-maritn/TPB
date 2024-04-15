@@ -3,6 +3,7 @@ import logging
 import sys
 
 from pyflink.common import WatermarkStrategy, Encoder, Types
+from pyflink.common.time import Duration
 from pyflink.datastream import StreamExecutionEnvironment, RuntimeExecutionMode
 from pyflink.datastream.connectors import (FileSource, StreamFormat, FileSink, OutputFileConfig,
                                            RollingPolicy)
@@ -47,7 +48,7 @@ word_count_data = ["To be, or not to be,--that is the question:--",
 
 def word_count(input_path, output_path):
     env = StreamExecutionEnvironment.get_execution_environment()
-    env.set_runtime_mode(RuntimeExecutionMode.BATCH)
+    #env.set_runtime_mode(RuntimeExecutionMode.BATCH)
     # write all the data to one file
     env.set_parallelism(1)
 
@@ -56,7 +57,7 @@ def word_count(input_path, output_path):
         ds = env.from_source(
             source=FileSource.for_record_stream_format(StreamFormat.text_line_format(),
                                                        input_path)
-                             .process_static_file_set().build(),
+                             .monitor_continuously(Duration.of_seconds(1)).build(),
             watermark_strategy=WatermarkStrategy.for_monotonous_timestamps(),
             source_name="file_source"
         )
